@@ -1,5 +1,5 @@
-const CACHE_NAME = "novex-music-shell-v1";
-const APP_SHELL = ["./", "./index.html", "./style.css", "./app.js", "./manifest.json", "./icons/icon.svg"];
+const CACHE_NAME = "novex-music-shell-v2";
+const APP_SHELL = ["./", "./index.html", "./style.css", "./app.js", "./manifest.json", "./icons/icon.svg", "./icons/icon-192.png", "./icons/icon-512.png"];
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)));
   self.skipWaiting();

@@ -1,577 +1,134 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta name="theme-color" content="#090611">
-<title>NØV3X MUSIC MAX</title>
-<style>
-:root{
- --bg:#090611;--panel:#151020;--panel2:#211630;
- --purple:#a855f7;--pink:#ec4899;--text:#fff;
- --muted:#a99bb9;--border:#342440;
-}
-*{box-sizing:border-box}
-body{
- margin:0;background:var(--bg);color:var(--text);
- font-family:Arial,Helvetica,sans-serif;
- padding-bottom:150px;
-}
-button,input{font:inherit}
-button{cursor:pointer}
-header{
- position:sticky;top:0;z-index:10;
- padding:15px;background:rgba(9,6,17,.96);
- border-bottom:1px solid var(--border);
- backdrop-filter:blur(15px);
-}
-.top{display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:21px;font-weight:1000;letter-spacing:1px}
-.logo span{color:var(--purple)}
-.sub{font-size:10px;color:var(--muted);margin-top:4px}
-.search{
- width:100%;margin-top:14px;padding:13px;
- background:var(--panel);border:1px solid var(--border);
- border-radius:13px;color:white;outline:none;
-}
-.search:focus{border-color:var(--purple)}
-main{padding:16px;max-width:850px;margin:auto}
-.hero{
- padding:22px;border-radius:20px;
- background:linear-gradient(135deg,#35105b,#17102b 65%,#42143c);
- border:1px solid #673c83;margin-bottom:20px;
-}
-.hero h1{font-size:27px;margin:0 0 8px}
-.hero p{color:#d5c4e5;font-size:13px;line-height:1.5}
-.hero button{background:white;color:#29113c}
-button{
- border:0;border-radius:11px;padding:11px 14px;
- background:var(--panel2);color:white;
-}
-.primary{
- background:linear-gradient(110deg,var(--purple),var(--pink));
- color:white;font-weight:bold;
-}
-.section{margin:24px 0}
-.section-head{
- display:flex;justify-content:space-between;
- align-items:center;margin-bottom:12px;gap:10px;
-}
-h2{font-size:17px;margin:0}
-.muted{color:var(--muted);font-size:12px}
-.genres{
- display:flex;gap:8px;overflow-x:auto;padding-bottom:7px;
-}
-.genre{
- white-space:nowrap;border:1px solid var(--border);
- background:var(--panel);font-size:12px;
-}
-.genre.active{background:var(--purple);border-color:var(--purple)}
-.track{
- display:flex;align-items:center;gap:12px;
- padding:10px;background:var(--panel);
- border:1px solid var(--border);
- border-radius:14px;margin-bottom:9px;
-}
-.cover{
- width:49px;height:49px;flex-shrink:0;
- border-radius:12px;display:grid;place-items:center;
- background:linear-gradient(135deg,#8b35d5,#e34a9e);
- font-size:22px;
-}
-.track-info{flex:1;min-width:0}
-.track-title{font-size:14px;font-weight:bold;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.track-sub{font-size:11px;color:var(--muted);margin-top:5px}
-.track-actions{display:flex;align-items:center;gap:5px}
-.iconbtn{padding:9px;background:transparent;font-size:18px}
-.active-love{color:#ff5caa}
-.tabs{display:flex;gap:8px;overflow:auto;margin:16px 0}
-.tab{white-space:nowrap;font-size:12px}
-.tab.active{background:var(--purple)}
-.panel{
- background:var(--panel);border:1px solid var(--border);
- border-radius:16px;padding:14px;margin-bottom:12px;
-}
-input[type=text]{
- background:#0e0a17;border:1px solid var(--border);
- color:white;padding:11px;border-radius:10px;width:100%;
-}
-.empty{text-align:center;padding:25px;color:var(--muted);font-size:13px}
-#player{
- position:fixed;bottom:0;left:0;right:0;z-index:20;
- background:#160f20;border-top:1px solid #57316d;
- padding:12px 15px calc(12px + env(safe-area-inset-bottom));
- box-shadow:0 -8px 30px #0008;
-}
-.player-top{display:flex;align-items:center;gap:10px}
-.player-cover{
- width:43px;height:43px;border-radius:10px;
- background:linear-gradient(135deg,#8b35d5,#e34a9e);
- display:grid;place-items:center;font-size:20px;
-}
-.player-info{flex:1;min-width:0}
-#nowTitle{font-size:13px;font-weight:bold;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#nowArtist{font-size:11px;color:var(--muted);margin-top:4px}
-.controls{display:flex;align-items:center;gap:7px}
-.controls button{padding:8px;background:transparent;font-size:18px}
-#playBtn{
- width:42px;height:42px;border-radius:50%;
- background:linear-gradient(120deg,var(--purple),var(--pink));
- font-size:18px;
-}
-.progress{display:flex;align-items:center;gap:8px;margin-top:9px}
-.progress span{font-size:10px;color:var(--muted);min-width:32px}
-input[type=range]{accent-color:var(--purple);width:100%}
-.small-actions{display:flex;gap:8px;flex-wrap:wrap}
-.small-actions button{font-size:12px}
-.hidden{display:none!important}
-.file-label{
- display:block;text-align:center;padding:14px;
- border:1px dashed var(--purple);border-radius:12px;
- color:#d8b5ff;cursor:pointer;
-}
-a{color:#d5a5ff}
-footer{text-align:center;color:var(--muted);font-size:10px;padding:25px}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#090611">
+  <meta name="description" content="NØV3X MUSIC MAX — your personal music hub.">
+  <title>NØV3X MUSIC MAX</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="NØV3X MUSIC MAX home">
+        <span class="brand-mark">N</span>
+        <span><strong>NØV3X</strong><small>MUSIC MAX</small></span>
+      </a>
+      <button id="installBtn" class="button button-small hidden" type="button">Install app</button>
+    </header>
 
-<header>
- <div class="top">
-  <div>
-   <div class="logo">NØV3X <span>MUSIC MAX</span></div>
-   <div class="sub">YOUR MUSIC. YOUR WORLD.</div>
+    <main>
+      <section class="hero">
+        <div class="eyebrow">YOUR SOUND. YOUR SPACE.</div>
+        <h1>Music without<br><span>limits.</span></h1>
+        <p>Bring your music together in one place.</p>
+        <div class="hero-actions">
+          <button id="importBtn" class="button" type="button">＋ Add music</button>
+          <button id="openFilesBtn" class="button button-ghost" type="button">My library</button>
+          <input id="fileInput" type="file" accept="audio/*" multiple hidden>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading"><div><div class="eyebrow">DISCOVER</div><h2>Browse genres</h2></div></div>
+        <div id="genreGrid" class="genre-grid"></div>
+      </section>
+
+      <section class="section" id="librarySection">
+        <div class="section-heading">
+          <div><div class="eyebrow">YOUR COLLECTION</div><h2 id="libraryTitle">Your music</h2></div>
+          <span id="trackCount" class="muted">0 tracks</span>
+        </div>
+        <div class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Search songs or artists..." autocomplete="off"></div>
+        <div class="toolbar">
+          <button class="chip active" data-filter="all">All songs</button>
+          <button class="chip" data-filter="favorites">Favorites</button>
+          <button class="chip" data-filter="recent">Recently played</button>
+          <button class="chip" data-filter="imported">My uploads</button>
+        </div>
+        <div id="trackList" class="track-list"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading"><div><div class="eyebrow">ORGANIZE</div><h2>Playlists</h2></div><button id="newPlaylistBtn" class="button button-small" type="button">＋ New</button></div>
+        <div id="playlistList" class="playlist-list"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading"><div><div class="eyebrow">UP NEXT</div><h2>Queue</h2></div><button id="clearQueueBtn" class="text-button" type="button">Clear</button></div>
+        <div id="queueList" class="track-list compact"></div>
+      </section>
+
+
+      <section class="section artist-feature">
+        <div class="eyebrow">ARTIST SPOTLIGHT</div>
+        <div class="artist-head">
+          <div class="artist-avatar">DC</div>
+          <div><h2>Daniel Caesar</h2><p class="muted">R&B · Artist collection</p></div>
+        </div>
+        <p class="muted">Explore Daniel Caesar's released music through authorized streaming services. These are listening links, not audio files stored in this app.</p>
+        <div class="artist-albums">
+          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20Freudian" target="_blank" rel="noopener"><strong>Freudian</strong><span>Album · 2017</span></a>
+          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20Case%20Study%2001" target="_blank" rel="noopener"><strong>CASE STUDY 01</strong><span>Album · 2019</span></a>
+          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20NEVER%20ENOUGH" target="_blank" rel="noopener"><strong>NEVER ENOUGH</strong><span>Album</span></a>
+          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20Son%20of%20Spergy" target="_blank" rel="noopener"><strong>Son of Spergy</strong><span>Album · 2025</span></a>
+          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20Praise%20Break" target="_blank" rel="noopener"><strong>Praise Break</strong><span>EP</span></a>
+          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20Pilgrim%27s%20Paradise" target="_blank" rel="noopener"><strong>Pilgrim's Paradise</strong><span>EP</span></a>
+          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20Birds%20of%20Paradise" target="_blank" rel="noopener"><strong>Birds of Paradise</strong><span>EP</span></a>
+        </div>
+        <div class="service-links">
+          <a href="https://www.sonofspergy.com/" target="_blank" rel="noopener">Official website ↗</a>
+          <a href="https://open.spotify.com/search/Daniel%20Caesar" target="_blank" rel="noopener">Spotify ↗</a>
+          <a href="https://music.youtube.com/search?q=Daniel%20Caesar" target="_blank" rel="noopener">YouTube Music ↗</a>
+          <a href="https://music.apple.com/us/search?term=Daniel%20Caesar" target="_blank" rel="noopener">Apple Music ↗</a>
+          <a href="https://soundcloud.com/search?q=Daniel%20Caesar" target="_blank" rel="noopener">SoundCloud ↗</a>
+        </div>
+      </section>
+
+      <section class="section services">
+        <div class="eyebrow">MORE MUSIC</div><h2>Explore online</h2>
+        <p class="muted">Open music services to discover and stream their catalogs. Their music is not stored inside this app.</p>
+        <div class="service-links">
+          <a href="https://music.youtube.com/" target="_blank" rel="noopener">YouTube Music ↗</a>
+          <a href="https://open.spotify.com/" target="_blank" rel="noopener">Spotify ↗</a>
+          <a href="https://soundcloud.com/" target="_blank" rel="noopener">SoundCloud ↗</a>
+          <a href="https://bandcamp.com/" target="_blank" rel="noopener">Bandcamp ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer><span>NØV3X MUSIC MAX</span><span id="storageStatus">Your library stays on this device</span></footer>
   </div>
-  <button onclick="showPage('library')">☰ Library</button>
- </div>
- <input id="search" class="search" placeholder="Search songs, artists or genres..." oninput="render()">
-</header>
 
-<main>
- <section class="hero">
-  <div class="muted">WELCOME TO YOUR MUSIC WORLD</div>
-  <h1>NØV3X MUSIC MAX</h1>
-  <p>Your personal music hub. Play demo tracks, import your own music, build playlists and save favorites.</p>
-  <button class="primary" onclick="document.getElementById('fileInput').click()">＋ Import Music</button>
- </section>
+  <aside id="player" class="player">
+    <div class="player-main">
+      <div id="coverArt" class="cover-art">N</div>
+      <div class="now-playing"><strong id="nowTitle">Nothing playing</strong><span id="nowArtist">Choose a track to begin</span></div>
+      <button id="favoriteCurrentBtn" class="icon-button" aria-label="Favorite current track" type="button">♡</button>
+      <button id="playPauseBtn" class="play-button" aria-label="Play or pause" type="button">▶</button>
+    </div>
+    <div class="progress-row"><span id="currentTime">0:00</span><input id="seekBar" type="range" min="0" max="1000" value="0"><span id="duration">0:00</span></div>
+    <div class="player-controls">
+      <button id="shuffleBtn" class="control-button" type="button" aria-label="Shuffle">⇄</button>
+      <button id="prevBtn" class="control-button" type="button" aria-label="Previous">|◀</button>
+      <button id="nextBtn" class="control-button" type="button" aria-label="Next">▶|</button>
+      <button id="repeatBtn" class="control-button" type="button" aria-label="Repeat">↻</button>
+      <label class="volume-control">VOL <input id="volumeBar" type="range" min="0" max="1" step="0.01" value="0.8"></label>
+    </div>
+  </aside>
 
- <div class="section">
-  <div class="section-head">
-   <h2>Explore Genres</h2>
-   <span class="muted">8 genres</span>
-  </div>
-  <div class="genres" id="genres"></div>
- </div>
+  <dialog id="playlistDialog">
+    <form method="dialog" id="playlistForm">
+      <h2>Create playlist</h2>
+      <input id="playlistName" maxlength="40" placeholder="Playlist name" required>
+      <div class="dialog-actions"><button class="button button-ghost" value="cancel">Cancel</button><button class="button" id="createPlaylistBtn" value="default">Create</button></div>
+    </form>
+  </dialog>
 
- <div class="tabs">
-  <button class="tab active" data-page="home" onclick="showPage('home')">Discover</button>
-  <button class="tab" data-page="library" onclick="showPage('library')">My Music</button>
-  <button class="tab" data-page="favorites" onclick="showPage('favorites')">♥ Favorites</button>
-  <button class="tab" data-page="playlists" onclick="showPage('playlists')">Playlists</button>
-  <button class="tab" data-page="queue" onclick="showPage('queue')">Queue</button>
- </div>
-
- <section id="content"></section>
-
- <section class="section">
-  <h2>Online Music Services</h2>
-  <p class="muted">Explore music through authorized streaming services.</p>
-  <div class="panel small-actions">
-   <button onclick="openService('https://music.youtube.com/')">YouTube Music ↗</button>
-   <button onclick="openService('https://open.spotify.com/')">Spotify ↗</button>
-   <button onclick="openService('https://soundcloud.com/')">SoundCloud ↗</button>
-   <button onclick="openService('https://bandcamp.com/')">Bandcamp ↗</button>
-  </div>
-  <p class="muted">These services open separately. Their catalogs are not automatically imported into this app.</p>
- </section>
-
- <section class="section">
-  <h2>Import Music From Phone</h2>
-  <div class="panel">
-   <label class="file-label" for="fileInput">
-    ＋ Choose audio files<br>
-    <span class="muted">MP3, WAV, OGG, M4A and supported audio formats</span>
-   </label>
-   <input id="fileInput" type="file" accept="audio/*" multiple hidden>
-   <p class="muted">Imported music is saved in this browser on this device. Browser storage can be cleared by your device or browser settings.</p>
-  </div>
- </section>
-</main>
-
-<footer>NØV3X MUSIC MAX • PERSONAL MUSIC PLAYER</footer>
-
-<div id="player">
- <div class="player-top">
-  <div class="player-cover">♫</div>
-  <div class="player-info">
-   <div id="nowTitle">Choose a song</div>
-   <div id="nowArtist">NØV3X MUSIC MAX</div>
-  </div>
-  <div class="controls">
-   <button onclick="previousSong()">⏮</button>
-   <button id="playBtn" onclick="togglePlay()">▶</button>
-   <button onclick="nextSong()">⏭</button>
-  </div>
- </div>
- <div class="progress">
-  <span id="currentTime">0:00</span>
-  <input id="seek" type="range" min="0" max="100" value="0" oninput="seekSong(this.value)">
-  <span id="duration">0:00</span>
- </div>
- <div class="small-actions" style="justify-content:space-between;margin-top:7px">
-  <button id="shuffleBtn" onclick="toggleShuffle()">🔀 Shuffle</button>
-  <button id="repeatBtn" onclick="toggleRepeat()">🔁 Repeat: Off</button>
-  <label class="muted">Volume <input id="volume" type="range" min="0" max="1" step=".01" value=".8"></label>
- </div>
-</div>
-
-<audio id="audio" preload="metadata"></audio>
-
-<script>
-const GENRES=[
- "All","OPM","Pop","Hip-hop / Rap","Phonk",
- "EDM","Rock","Lo-fi / Chill","Gaming"
-];
-
-// These are sample/demo streams, not a complete commercial music catalog.
-const samples=[
- {id:"s1",title:"SoundHelix Demo 1",artist:"Demo Artist",genre:"Pop",url:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"},
- {id:"s2",title:"SoundHelix Demo 2",artist:"Demo Artist",genre:"EDM",url:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"},
- {id:"s3",title:"SoundHelix Demo 3",artist:"Demo Artist",genre:"Rock",url:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"},
- {id:"s4",title:"SoundHelix Demo 4",artist:"Demo Artist",genre:"Lo-fi / Chill",url:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"},
- {id:"s5",title:"SoundHelix Demo 5",artist:"Demo Artist",genre:"Hip-hop / Rap",url:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"},
- {id:"s6",title:"SoundHelix Demo 6",artist:"Demo Artist",genre:"Gaming",url:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"},
- {id:"s7",title:"SoundHelix Demo 7",artist:"Demo Artist",genre:"OPM",url:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"},
- {id:"s8",title:"SoundHelix Demo 8",artist:"Demo Artist",genre:"Phonk",url:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"}
-];
-
-let imported=[];
-let favorites=JSON.parse(localStorage.getItem("nv_favorites")||"[]");
-let playlists=JSON.parse(localStorage.getItem("nv_playlists")||"[]");
-let recent=JSON.parse(localStorage.getItem("nv_recent")||"[]");
-let queue=[];
-let current=null;
-let currentPage="home";
-let selectedGenre="All";
-let shuffle=false;
-let repeat="off";
-let db=null;
-
-const audio=document.getElementById("audio");
-
-function save(){
- localStorage.setItem("nv_favorites",JSON.stringify(favorites));
- localStorage.setItem("nv_playlists",JSON.stringify(playlists));
- localStorage.setItem("nv_recent",JSON.stringify(recent));
-}
-
-function openService(url){window.open(url,"_blank","noopener")}
-
-function makeId(){
- return "local_"+Date.now()+"_"+Math.random().toString(36).slice(2);
-}
-
-// IndexedDB stores imported audio so it can remain available after refresh.
-function openDB(){
- return new Promise((resolve,reject)=>{
-  const request=indexedDB.open("NOVEX_MUSIC_MAX_DB",1);
-  request.onupgradeneeded=()=>{
-   const database=request.result;
-   if(!database.objectStoreNames.contains("tracks"))
-    database.createObjectStore("tracks",{keyPath:"id"});
-  };
-  request.onsuccess=()=>resolve(request.result);
-  request.onerror=()=>reject(request.error);
- });
-}
-
-async function loadImported(){
- try{
-  db=await openDB();
-  const tx=db.transaction("tracks","readonly");
-  const request=tx.objectStore("tracks").getAll();
-  request.onsuccess=()=>{
-   imported=request.result.map(t=>({...t,url:URL.createObjectURL(t.blob)}));
-   render();
-  };
- }catch(e){
-  console.log("Local music storage unavailable",e);
- }
-}
-
-function allTracks(){return [...samples,...imported]}
-
-function findTrack(id){return allTracks().find(t=>t.id===id)}
-
-function formatTime(seconds){
- if(!Number.isFinite(seconds))return "0:00";
- const m=Math.floor(seconds/60);
- const s=Math.floor(seconds%60).toString().padStart(2,"0");
- return m+":"+s;
-}
-
-function renderGenres(){
- document.getElementById("genres").innerHTML=GENRES.map(g=>
-  `<button class="genre ${selectedGenre===g?"active":""}" onclick="chooseGenre('${g.replace(/'/g,"\\'")}')">${g}</button>`
- ).join("");
-}
-
-function chooseGenre(g){
- selectedGenre=g;
- currentPage="home";
- render();
-}
-
-function showPage(page){
- currentPage=page;
- document.querySelectorAll(".tab").forEach(t=>
-  t.classList.toggle("active",t.dataset.page===page)
- );
- render();
-}
-
-function render(){
- renderGenres();
- const search=document.getElementById("search").value.toLowerCase().trim();
- let tracks=allTracks();
-
- if(currentPage==="favorites")
-  tracks=tracks.filter(t=>favorites.includes(t.id));
- else if(currentPage==="library")
-  tracks=imported;
- else if(currentPage==="queue")
-  tracks=queue.map(id=>findTrack(id)).filter(Boolean);
- else if(currentPage==="playlists"){
-  renderPlaylists();
-  return;
- }else if(currentPage==="home"&&selectedGenre!=="All"){
-  tracks=tracks.filter(t=>t.genre===selectedGenre);
- }
-
- if(search){
-  tracks=tracks.filter(t=>
-   (t.title+" "+t.artist+" "+t.genre).toLowerCase().includes(search)
-  );
- }
-
- const heading=currentPage==="favorites"?"Your Favorites":
-  currentPage==="library"?"Your Imported Music":
-  currentPage==="queue"?"Your Queue":
-  selectedGenre==="All"?"Discover Music":selectedGenre;
-
- let html=`<div class="section-head"><h2>${heading}</h2><span class="muted">${tracks.length} tracks</span></div>`;
-
- if(currentPage==="home"&&!search&&selectedGenre==="All"){
-  html+=`<div class="panel">
-   <b>Recently Played</b>
-   <div class="muted">Your listening history</div>
-   <div style="margin-top:10px">${recent.length?recent.slice(0,4).map(id=>{
-    const t=findTrack(id);
-    return t?`<div class="track-title" style="padding:5px 0" onclick="playTrack('${t.id}')">▶ ${escapeHTML(t.title)}</div>`:"";
-   }).join(""):'<span class="muted">No listening history yet.</span>'}</div>
-  </div>`;
- }
-
- html+=tracks.length?tracks.map(trackHTML).join(""):'<div class="empty">No songs found here yet.<br>Import music from your phone or try another genre.</div>';
- document.getElementById("content").innerHTML=html;
-}
-
-function escapeHTML(s){
- return String(s).replace(/[&<>"']/g,c=>({
-  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
- }[c]));
-}
-
-function trackHTML(t){
- const loved=favorites.includes(t.id);
- return `<div class="track">
-  <div class="cover">♫</div>
-  <div class="track-info" onclick="playTrack('${t.id}')">
-   <div class="track-title">${escapeHTML(t.title)}</div>
-   <div class="track-sub">${escapeHTML(t.artist)} • ${escapeHTML(t.genre)}</div>
-  </div>
-  <div class="track-actions">
-   <button class="iconbtn ${loved?"active-love":""}" onclick="toggleFavorite('${t.id}')">${loved?"♥":"♡"}</button>
-   <button class="iconbtn" onclick="addQueue('${t.id}')">＋</button>
-   <button class="iconbtn" onclick="playTrack('${t.id}')">▶</button>
-  </div>
- </div>`;
-}
-
-function renderPlaylists(){
- let html=`<div class="section-head"><h2>Your Playlists</h2></div>
- <div class="panel">
-  <input id="playlistName" type="text" placeholder="Enter playlist name...">
-  <button class="primary" style="width:100%;margin-top:9px" onclick="createPlaylist()">＋ Create Playlist</button>
- </div>`;
- if(!playlists.length)html+='<div class="empty">No playlists yet. Create your first playlist.</div>';
- playlists.forEach((p,i)=>{
-  html+=`<div class="panel">
-   <div class="section-head"><b>♫ ${escapeHTML(p.name)}</b>
-   <button onclick="deletePlaylist(${i})">Delete</button></div>
-   <div class="muted">${p.tracks.length} songs</div>
-   ${p.tracks.map(id=>{
-    const t=findTrack(id);
-    return t?`<div class="track-title" style="padding:8px 0" onclick="playTrack('${t.id}')">▶ ${escapeHTML(t.title)}</div>`:"";
-   }).join("")}
-   <button style="margin-top:8px" onclick="addCurrentToPlaylist(${i})">＋ Add current song</button>
-  </div>`;
- });
- document.getElementById("content").innerHTML=html;
-}
-
-function createPlaylist(){
- const name=document.getElementById("playlistName").value.trim();
- if(!name)return alert("Enter a playlist name.");
- playlists.push({name,tracks:[]});
- save();render();
-}
-
-function deletePlaylist(i){
- if(!confirm("Delete this playlist?"))return;
- playlists.splice(i,1);save();render();
-}
-
-function addCurrentToPlaylist(i){
- if(!current)return alert("Play a song first.");
- if(!playlists[i].tracks.includes(current.id))
-  playlists[i].tracks.push(current.id);
- save();render();
-}
-
-function toggleFavorite(id){
- favorites=favorites.includes(id)?favorites.filter(x=>x!==id):[...favorites,id];
- save();render();
-}
-
-function addQueue(id){
- if(!queue.includes(id))queue.push(id);
- render();
- alert("Added to queue.");
-}
-
-function playTrack(id){
- const t=findTrack(id);
- if(!t)return;
- current=t;
- audio.src=t.url;
- audio.play().then(()=>{
-  updatePlayer();
- }).catch(()=>{
-  updatePlayer();
-  alert("This track could not start. Check your internet connection or try another song.");
- });
- recent=[id,...recent.filter(x=>x!==id)].slice(0,20);
- save();
- updatePlayer();
-}
-
-function updatePlayer(){
- document.getElementById("nowTitle").textContent=current?.title||"Choose a song";
- document.getElementById("nowArtist").textContent=current?.artist||"NØV3X MUSIC MAX";
- document.getElementById("playBtn").textContent=audio.paused?"▶":"Ⅱ";
-}
-
-function togglePlay(){
- if(!current){
-  const first=allTracks()[0];
-  if(first)playTrack(first.id);
-  return;
- }
- if(audio.paused)audio.play().catch(()=>{});
- else audio.pause();
- updatePlayer();
-}
-
-function nextSong(){
- if(!current)return;
- let list=queue.length?queue.map(findTrack).filter(Boolean):allTracks();
- if(!list.length)return;
- let index=list.findIndex(t=>t.id===current.id);
- let next;
- if(shuffle)next=list[Math.floor(Math.random()*list.length)];
- else next=list[(index+1+list.length)%list.length];
- playTrack(next.id);
-}
-
-function previousSong(){
- if(audio.currentTime>3){audio.currentTime=0;return}
- if(!current)return;
- const list=allTracks();
- const index=list.findIndex(t=>t.id===current.id);
- playTrack(list[(index-1+list.length)%list.length].id);
-}
-
-function toggleShuffle(){
- shuffle=!shuffle;
- document.getElementById("shuffleBtn").style.color=shuffle?"#d6a5ff":"white";
-}
-
-function toggleRepeat(){
- repeat=repeat==="off"?"all":repeat==="all"?"one":"off";
- document.getElementById("repeatBtn").textContent="🔁 Repeat: "+repeat;
-}
-
-function seekSong(value){
- if(audio.duration)audio.currentTime=audio.duration*(value/100);
-}
-
-audio.addEventListener("timeupdate",()=>{
- document.getElementById("currentTime").textContent=formatTime(audio.currentTime);
- document.getElementById("duration").textContent=formatTime(audio.duration);
- document.getElementById("seek").value=audio.duration?(audio.currentTime/audio.duration)*100:0;
-});
-
-audio.addEventListener("play",updatePlayer);
-audio.addEventListener("pause",updatePlayer);
-audio.addEventListener("ended",()=>{
- if(repeat==="one"){audio.currentTime=0;audio.play();return}
- if(repeat==="all"||queue.length||shuffle)nextSong();
- else updatePlayer();
-});
-
-document.getElementById("volume").addEventListener("input",e=>{
- audio.volume=Number(e.target.value);
-});
-audio.volume=.8;
-
-document.getElementById("fileInput").addEventListener("change",async e=>{
- const files=[...e.target.files];
- if(!files.length)return;
- try{
-  if(!db)db=await openDB();
-  for(const file of files){
-   if(!file.type.startsWith("audio/"))continue;
-   const id=makeId();
-   const track={
-    id,title:file.name.replace(/\.[^/.]+$/,""),
-    artist:"Your Music",genre:"Imported",blob:file
-   };
-   await new Promise((resolve,reject)=>{
-    const tx=db.transaction("tracks","readwrite");
-    tx.objectStore("tracks").put(track);
-    tx.oncomplete=resolve;
-    tx.onerror=()=>reject(tx.error);
-   });
-  }
-  await loadImported();
-  currentPage="library";
-  render();
-  alert("Your music has been imported!");
- }catch(err){
-  alert("Could not save the music. Your browser storage may be full.");
- }
- e.target.value="";
-});
-
-document.getElementById("search").addEventListener("input",()=>{
- if(currentPage==="playlists")currentPage="home";
- render();
-});
-
-render();
-loadImported();
-</script>
+  <audio id="audio" preload="metadata"></audio>
+  <script src="app.js" defer></script>
 </body>
 </html>
