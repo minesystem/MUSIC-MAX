@@ -1,0 +1,19 @@
+{
+  "name": "NØV3X MUSIC MAX",
+  "short_name": "NØV3X MUSIC",
+  "description": "Your personal music hub.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#090611",
+  "theme_color": "#090611",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
