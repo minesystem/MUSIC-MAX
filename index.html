@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -33,55 +34,131 @@
       </section>
 
       <section class="section">
-        <div class="section-heading"><div><div class="eyebrow">DISCOVER</div><h2>Browse genres</h2></div></div>
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">DISCOVER</div>
+            <h2>Browse genres</h2>
+          </div>
+        </div>
         <div id="genreGrid" class="genre-grid"></div>
       </section>
 
       <section class="section" id="librarySection">
         <div class="section-heading">
-          <div><div class="eyebrow">YOUR COLLECTION</div><h2 id="libraryTitle">Your music</h2></div>
+          <div>
+            <div class="eyebrow">YOUR COLLECTION</div>
+            <h2 id="libraryTitle">Your music</h2>
+          </div>
           <span id="trackCount" class="muted">0 tracks</span>
         </div>
-        <div class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Search songs or artists..." autocomplete="off"></div>
+
+        <div class="search-wrap">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Search songs or artists..." autocomplete="off">
+        </div>
+
         <div class="toolbar">
           <button class="chip active" data-filter="all">All songs</button>
           <button class="chip" data-filter="favorites">Favorites</button>
           <button class="chip" data-filter="recent">Recently played</button>
           <button class="chip" data-filter="imported">My uploads</button>
         </div>
+
         <div id="trackList" class="track-list"></div>
       </section>
 
       <section class="section">
-        <div class="section-heading"><div><div class="eyebrow">ORGANIZE</div><h2>Playlists</h2></div><button id="newPlaylistBtn" class="button button-small" type="button">＋ New</button></div>
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">ORGANIZE</div>
+            <h2>Playlists</h2>
+          </div>
+          <button id="newPlaylistBtn" class="button button-small" type="button">＋ New</button>
+        </div>
         <div id="playlistList" class="playlist-list"></div>
       </section>
 
       <section class="section">
-        <div class="section-heading"><div><div class="eyebrow">UP NEXT</div><h2>Queue</h2></div><button id="clearQueueBtn" class="text-button" type="button">Clear</button></div>
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">UP NEXT</div>
+            <h2>Queue</h2>
+          </div>
+          <button id="clearQueueBtn" class="text-button" type="button">Clear</button>
+        </div>
         <div id="queueList" class="track-list compact"></div>
       </section>
 
-
-      <section class="section artist-feature">
+      <!-- DANIEL CAESAR SPOTIFY SECTION -->
+      <section class="section artist-feature" id="danielCaesar">
         <div class="eyebrow">ARTIST SPOTLIGHT</div>
+
         <div class="artist-head">
           <div class="artist-avatar">DC</div>
-          <div><h2>Daniel Caesar</h2><p class="muted">R&B · Artist collection</p></div>
+          <div>
+            <h2>Daniel Caesar</h2>
+            <p class="muted">R&B · Official Spotify Player</p>
+          </div>
         </div>
-        <p class="muted">Explore Daniel Caesar's released music through authorized streaming services. These are listening links, not audio files stored in this app.</p>
+
+        <p class="muted">
+          Explore Daniel Caesar's music through Spotify.
+          Playback is provided by Spotify, not stored in NØV3X MUSIC MAX.
+        </p>
+
+        <div class="spotify-heading">
+          <span>LISTEN ON SPOTIFY</span>
+          <span class="spotify-dot">● CONNECTED PLAYER</span>
+        </div>
+
+        <div class="spotify-player">
+          <iframe
+            title="Daniel Caesar Spotify artist player"
+            src="https://open.spotify.com/embed/artist/4fxd5Ee7UefO4CUXgwJty?utm_source=generator&theme=0"
+            width="100%"
+            height="450"
+            frameborder="0"
+            allowfullscreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <a
+          class="button spotify-open"
+          href="https://open.spotify.com/artist/4fxd5Ee7UefO4CUXgwJty"
+          target="_blank"
+          rel="noopener noreferrer">
+          OPEN FULL SPOTIFY ↗
+        </a>
+
         <div class="artist-albums">
-          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20Freudian" target="_blank" rel="noopener"><strong>Freudian</strong><span>Album · 2017</span></a>
-          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20Case%20Study%2001" target="_blank" rel="noopener"><strong>CASE STUDY 01</strong><span>Album · 2019</span></a>
-          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20NEVER%20ENOUGH" target="_blank" rel="noopener"><strong>NEVER ENOUGH</strong><span>Album</span></a>
-          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20Son%20of%20Spergy" target="_blank" rel="noopener"><strong>Son of Spergy</strong><span>Album · 2025</span></a>
-          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20Praise%20Break" target="_blank" rel="noopener"><strong>Praise Break</strong><span>EP</span></a>
-          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20Pilgrim%27s%20Paradise" target="_blank" rel="noopener"><strong>Pilgrim's Paradise</strong><span>EP</span></a>
-          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20Birds%20of%20Paradise" target="_blank" rel="noopener"><strong>Birds of Paradise</strong><span>EP</span></a>
+          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20Freudian" target="_blank" rel="noopener">
+            <strong>Freudian</strong><span>Album · 2017</span>
+          </a>
+          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20Case%20Study%2001" target="_blank" rel="noopener">
+            <strong>CASE STUDY 01</strong><span>Album · 2019</span>
+          </a>
+          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20NEVER%20ENOUGH" target="_blank" rel="noopener">
+            <strong>NEVER ENOUGH</strong><span>Album</span>
+          </a>
+          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20Son%20of%20Spergy" target="_blank" rel="noopener">
+            <strong>Son of Spergy</strong><span>Album · 2025</span>
+          </a>
+          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20Praise%20Break" target="_blank" rel="noopener">
+            <strong>Praise Break</strong><span>EP</span>
+          </a>
+          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20Pilgrim%27s%20Paradise" target="_blank" rel="noopener">
+            <strong>Pilgrim's Paradise</strong><span>EP</span>
+          </a>
+          <a href="https://music.youtube.com/search?q=Daniel%20Caesar%20Birds%20of%20Paradise" target="_blank" rel="noopener">
+            <strong>Birds of Paradise</strong><span>EP</span>
+          </a>
         </div>
+
         <div class="service-links">
           <a href="https://www.sonofspergy.com/" target="_blank" rel="noopener">Official website ↗</a>
-          <a href="https://open.spotify.com/search/Daniel%20Caesar" target="_blank" rel="noopener">Spotify ↗</a>
+          <a href="https://open.spotify.com/artist/4fxd5Ee7UefO4CUXgwJty" target="_blank" rel="noopener">Spotify ↗</a>
           <a href="https://music.youtube.com/search?q=Daniel%20Caesar" target="_blank" rel="noopener">YouTube Music ↗</a>
           <a href="https://music.apple.com/us/search?term=Daniel%20Caesar" target="_blank" rel="noopener">Apple Music ↗</a>
           <a href="https://soundcloud.com/search?q=Daniel%20Caesar" target="_blank" rel="noopener">SoundCloud ↗</a>
@@ -89,8 +166,12 @@
       </section>
 
       <section class="section services">
-        <div class="eyebrow">MORE MUSIC</div><h2>Explore online</h2>
-        <p class="muted">Open music services to discover and stream their catalogs. Their music is not stored inside this app.</p>
+        <div class="eyebrow">MORE MUSIC</div>
+        <h2>Explore online</h2>
+        <p class="muted">
+          Open music services to discover and stream their catalogs.
+          Their music is not stored inside this app.
+        </p>
         <div class="service-links">
           <a href="https://music.youtube.com/" target="_blank" rel="noopener">YouTube Music ↗</a>
           <a href="https://open.spotify.com/" target="_blank" rel="noopener">Spotify ↗</a>
@@ -100,23 +181,37 @@
       </section>
     </main>
 
-    <footer><span>NØV3X MUSIC MAX</span><span id="storageStatus">Your library stays on this device</span></footer>
+    <footer>
+      <span>NØV3X MUSIC MAX</span>
+      <span id="storageStatus">Your library stays on this device</span>
+    </footer>
   </div>
 
   <aside id="player" class="player">
     <div class="player-main">
       <div id="coverArt" class="cover-art">N</div>
-      <div class="now-playing"><strong id="nowTitle">Nothing playing</strong><span id="nowArtist">Choose a track to begin</span></div>
+      <div class="now-playing">
+        <strong id="nowTitle">Nothing playing</strong>
+        <span id="nowArtist">Choose a track to begin</span>
+      </div>
       <button id="favoriteCurrentBtn" class="icon-button" aria-label="Favorite current track" type="button">♡</button>
       <button id="playPauseBtn" class="play-button" aria-label="Play or pause" type="button">▶</button>
     </div>
-    <div class="progress-row"><span id="currentTime">0:00</span><input id="seekBar" type="range" min="0" max="1000" value="0"><span id="duration">0:00</span></div>
+
+    <div class="progress-row">
+      <span id="currentTime">0:00</span>
+      <input id="seekBar" type="range" min="0" max="1000" value="0">
+      <span id="duration">0:00</span>
+    </div>
+
     <div class="player-controls">
       <button id="shuffleBtn" class="control-button" type="button" aria-label="Shuffle">⇄</button>
       <button id="prevBtn" class="control-button" type="button" aria-label="Previous">|◀</button>
       <button id="nextBtn" class="control-button" type="button" aria-label="Next">▶|</button>
       <button id="repeatBtn" class="control-button" type="button" aria-label="Repeat">↻</button>
-      <label class="volume-control">VOL <input id="volumeBar" type="range" min="0" max="1" step="0.01" value="0.8"></label>
+      <label class="volume-control">VOL
+        <input id="volumeBar" type="range" min="0" max="1" step="0.01" value="0.8">
+      </label>
     </div>
   </aside>
 
@@ -124,7 +219,10 @@
     <form method="dialog" id="playlistForm">
       <h2>Create playlist</h2>
       <input id="playlistName" maxlength="40" placeholder="Playlist name" required>
-      <div class="dialog-actions"><button class="button button-ghost" value="cancel">Cancel</button><button class="button" id="createPlaylistBtn" value="default">Create</button></div>
+      <div class="dialog-actions">
+        <button class="button button-ghost" value="cancel">Cancel</button>
+        <button class="button" id="createPlaylistBtn" value="default">Create</button>
+      </div>
     </form>
   </dialog>
 
